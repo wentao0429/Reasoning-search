@@ -1,6 +1,6 @@
 # R-Search
 
-This project is trained. The Large Language Model (LLM) should output in the following format:
+The Large Language Model (LLM) should output in the following format:
 
 <think>Reasoning process</think> + <search>Search planning results - DAG</search> + <result>[Search results]</result> + <answer>Final generated result</answer>
 
