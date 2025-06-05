@@ -1,0 +1,30 @@
+{
+    "train_micro_batch_size_per_gpu": "auto",
+    "gradient_accumulation_steps": "auto",
+    "zero_optimization": {
+      "stage": 2,
+      "allgather_partitions": true,
+      "allgather_bucket_size": 200000000,
+      "overlap_comm": true,
+      "reduce_scatter": true,
+      "reduce_bucket_size": 200000000,
+      "contiguous_gradients": true
+    },
+    "bf16": {
+      "enabled": "auto"
+    },
+    "activation_checkpointing": {
+      "partition_activations": true,
+      "cpu_checkpointing": false,
+      "contiguous_memory_optimization": false,
+      "number_checkpoints": 1,
+      "synchronize_checkpoint_boundary": false,
+      "profile": false
+    },
+    "distributed": {
+      "backend": "nccl",
+      "init_method": "env://",
+      "timeout": 1800
+    }
+}
+  
